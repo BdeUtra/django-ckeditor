@@ -128,8 +128,6 @@ def upload(request):
         out.write(chunk)
     out.close()
 
-    create_thumbnail(upload_filename)
-
     # Respond with Javascript sending ckeditor upload url.
     url = get_media_url(upload_filename)
     return HttpResponse("""
